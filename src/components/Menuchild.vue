@@ -6,6 +6,7 @@
 
         <button @click="increment">+</button>
         <button @click="decrement">-</button>
+        <div>{{child}}</div>
     </div>
 
 </template>
@@ -22,6 +23,14 @@
                 localCount:5,
 
             }
+        },
+        props:{
+         child:{
+             type:String,
+             default:function () {
+                 return {}
+             }
+         }
         },
         methods: {
             increment () {

@@ -8,6 +8,7 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "vue": "^2.0.1",
     "vue-router": "^2.0.1",
     "vuex": "^2.3.1"

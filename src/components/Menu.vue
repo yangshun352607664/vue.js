@@ -6,7 +6,7 @@
         <button-total @add="total" :hehe="n"></button-total>
         <button @click="increment">+</button>
         <button @click="decrement">-</button>
-        <Menuchild></Menuchild>
+        <Menuchild :child='parents'></Menuchild>
 
     </div>
 </template>
@@ -19,10 +19,11 @@
                 return{
                   a:{color:'red',fontSize:'24px'},
                     n:0,
-                    price:10
-
+                    price:10,
+                    parents:"this is a from parents"
                 }
             },
+
         methods:{
            total:function(n){
                this.n+=n
