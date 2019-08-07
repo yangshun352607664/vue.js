@@ -6,8 +6,8 @@
       <li>
         <router-link to="/home">主页</router-link>
         <router-link to="/news">新闻</router-link>
-        <button @click="increment">+</button>
-        <button @click="decrement(5)">-</button>
+        <button @click="increment(price)">+</button>
+        <button @click="decrement(price)">-</button>
       </li>
     </ul>
     <div>
@@ -27,7 +27,7 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
-        price:5
+        price:10
     }
   },
     computed:{
@@ -36,12 +36,11 @@ export default {
         })
     },
     methods: {
-        increment () {
-            this.$store.dispatch('increment',this.price)
-        },
-        ...mapActions({
-            decrement:'decrement'
-        })
+      
+        ...mapActions([
+          'increment',
+          'decrement'
+        ])
     },
 
 }

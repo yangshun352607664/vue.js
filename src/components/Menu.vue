@@ -5,7 +5,6 @@
         <button-total @add="total" :hehe="n"></button-total>
         <button-total @add="total" :hehe="n"></button-total>
         <button @click="increment">+</button>
-        <button @click="decrement">-</button>
         <Menuchild :child='parents'></Menuchild>
 
     </div>
@@ -13,7 +12,7 @@
 
 <script>
    import Menuchild from './Menuchild.vue'
-
+   import {mapActions} from 'vuex'
     export default({
             data(){
                 return{
@@ -26,7 +25,7 @@
 
         methods:{
            total:function(n){
-               this.n+=n
+               this.n+=1
                console.log(n);
 
            },
@@ -50,7 +49,6 @@
                         return {
                             counter: 0,
                             istop:true
-
                         }
                     },
                     methods: {

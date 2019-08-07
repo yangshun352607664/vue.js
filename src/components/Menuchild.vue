@@ -1,7 +1,7 @@
 <template>
     <div>
         <h3>我是菜单中的下面的子组件</h3>
-        {{ getfullyear}}{{count}}
+        {{ getfullyear}}/{{count}}
         <div v-html="html"></div>
 
         <button @click="increment">+</button>
@@ -26,10 +26,7 @@
         },
         props:{
          child:{
-             type:String,
-             default:function () {
-                 return {}
-             }
+             type:String
          }
         },
         methods: {
@@ -48,16 +45,12 @@
                 // 箭头函数可使代码更简练
                 html(state) {
                     if( state.count===0){
-                        return '<div>hth</div>'
+                        return '<div>0</div>'
                     }else{
                         return `<h3>我是菜单中的下面的子组件</h3>`
                     }
                 },
-                count:function(state){
-                    return state.count
-                }
-
-
+                count: state => state.count
             }),
         },
        /* created(){
